@@ -9,7 +9,7 @@ $color5: rgb(205, 37, 240);
 $color6: rgb(27, 10, 31);
 $opacity1: 0.3;
 $opacity2: 0.7;
-$image: url('./thomas-millot-wlZpxDNT4QI-unsplash.jpg');
+$image: url('./assets/thomas-millot-wlZpxDNT4QI-unsplash.jpg');
 
 // mixins
 @mixin background-overlay($opacity: '', $color: '', $direction: '') {
