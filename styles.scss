@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash|Cedarville+Cursive|Gochi+Hand|Permanent+Marker|Petit+Formal+Script&display=swap');
+
+// variables
+$color1: rgb(236, 172, 172);
+$color2: rgb(191, 172, 236);
+$color3: rgb(32, 61, 61);
+$color4: rgb(207, 120, 108);
+$color5: rgb(205, 37, 240);
+$color6: rgb(27, 10, 31);
+$opacity1: 0.3;
+$opacity2: 0.7;
+$image: url('./thomas-millot-wlZpxDNT4QI-unsplash.jpg');
+
+// mixins
+@mixin background-overlay($opacity: '', $color: '', $direction: '') {
+  background-image: linear-gradient(
+    to $direction,
+    rgba($color, $opacity),
+    rgba($color, $opacity)
+  );
+}
+@mixin background-img($img: '', $opacity: '', $color: '') {
+  background-image: linear-gradient(
+      to bottom,
+      rgba($color, $opacity),
+      rgba($color, $opacity)
+    ),
+    $img;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+@mixin gradient(
+  $start-color,
+  $end-color,
+  $start-opacity,
+  $end-opacity,
+  $direction
+) {
+  background-image: linear-gradient(
+    to $direction,
+    rgba($start-color, $start-opacity),
+    rgba($end-color, $end-opacity)
+  );
+}
+// box shadow
+@mixin box-shadow($radius, $spread, $color, $x: 0, $y: 0) {
+  -webkit-box-shadow: $x $y $radius $spread $color;
+  -moz-box-shadow: $x $y $radius $spread $color;
+  box-shadow: $x $y $radius $spread $color;
+}
+// media queries
+@mixin media-query($size) {
+  @if $size == 'phone' {
+    @media (max-width: 599px) {
+      @content;
+    }
+  } @else if $size == 'phone-landscape' {
+    @media (max-width: 899px) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $size == 'tablet-portrait' {
+    @media (max-width: 899px) and (orientation: portrait) {
+      @content;
+    }
+  } @else if $size == 'tablet-landscape' {
+    @media (max-width: 1199px) and (orientation: landscape) {
+      @content;
+    }
+  } @else if $size == 'desktop' {
+    @media (max-width: 1799px) {
+      @content;
+    }
+  } @else if $size == 'wide' {
+    @media (min-width: 1800px) {
+      @content;
+    }
+  }
+}
+
+html,
+body {
+  //   overflow: hidden;
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Petit Formal Script', cursive;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+body {
+  @include background-img($image, $opacity1, $color2);
+}
+.container {
+  height: 100%;
+    // position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  header,
+  footer {
+    font-size: 1.2rem;
+    font-weight: 900;
+    border-radius: 6px;
+    padding: 0.8rem;
+    width: fit-content;
+    // margin: 3% auto;
+    // @include gradient($color6, $color2, $opacity2, $opacity2, bottom right);
+    @include media-query('tablet-landscape') {
+      //   margin: 2% auto;
+    }
+    @include media-query('tablet-portrait') {
+      // max-width: 35rem;
+      // margin: 4rem auto;
+    }
+    @include media-query('phone') {
+      font-size: 1rem;
+      // margin: 2% auto;
+    }
+    @include media-query('phone-landscape') {
+      font-size: 1rem;
+      padding: 0.5rem;
+      // margin: 2% auto;
+    }
+  }
+  footer {
+    @include background-overlay($opacity2, $color2, right bottom);
+  }
+  .title {
+    @include gradient($color6, $color3, $opacity2, $opacity2, bottom right);
+    border: 1px solid $color1;
+    font-family: 'Berkshire Swash', cursive;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  main {
+    max-width: 45rem;
+    // margin: 2.5rem auto;
+    width: fit-content;
+    padding: 1.9rem;
+    background: rgb(37, 74, 79);
+    background: linear-gradient(
+      135deg,
+      rgba(37, 74, 79, 1) 0%,
+      rgba(207, 120, 108, 1) 0%,
+      rgba(205, 37, 240, 1) 100%
+    );
+    @include box-shadow(5px, 5px, $color1);
+    @include media-query('tablet-landscape') {
+      //   margin: 2rem auto;
+    }
+    @include media-query('tablet-portrait') {
+      max-width: 35rem;
+      //   margin: 4rem auto;
+    }
+    @include media-query('phone') {
+      padding: 0.4rem;
+      max-width: 25rem;
+      padding: 0.9rem;
+      // margin: 2rem auto;
+    }
+    @include media-query('phone-landscape') {
+        max-width: 35rem;
+        padding: 0.9rem;
+      }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .card {
+      position: relative;
+      width: 10rem;
+      height: 10rem;
+      transition: transform 0.5s;
+      // transform-style: preserve-3d;
+      // &.flip {
+      //   transform: rotateY(180deg);
+      // }
+      @include media-query('phone') {
+        width: 6rem;
+        height: 6rem;
+        // overflow: visible;
+      }
+      @include media-query('phone-landscape') {
+        width: 5.5rem;
+        height: 5.5rem;
+      }
+      .back,
+      .front {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: white;
+        border: 1px solid darkred;
+        color: $color3;
+        text-align: center;
+        line-height: 1.4;
+        font-family: 'Berkshire Swash', cursive;
+        font-size: 7rem;
+        cursor: pointer;
+        backface-visibility: hidden;
+        transition: transform 0.5s;
+        @include media-query('phone') {
+          // line-height: 1.2;
+          font-size: 4.5rem;
+        }
+        @include media-query('phone-landscape') {
+          font-size: 4.5rem;
+        }
+        &.flip {
+          transform: rotateY(180deg);
+        }
+      }
+      .front {
+        color: $color3;
+        // transform: rotateY(180deg);
+      }
+    }
+  }
+  .hide {
+    display: none;
+  }
+  .popup {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    @include background-overlay(0.9, $color6, right bottom);
+    text-align: center;
+    // font-family: 'Cedarville', cursive;
+    font-family: 'Gochi Hand', cursive;
+    p {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-transform: uppercase;
+      font-size: 5rem;
+      color: $color1;
+    }
+  }
+}

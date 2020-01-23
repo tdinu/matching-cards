@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css?family=Berkshire+Swash|Cedarville+Cursive|Gochi+Hand|Permanent+Marker|Petit+Formal+Script&display=swap");
+html,
+body {
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Petit Formal Script', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(191, 172, 236, 0.3)), to(rgba(191, 172, 236, 0.3))), url("./thomas-millot-wlZpxDNT4QI-unsplash.jpg");
+  background-image: linear-gradient(to bottom, rgba(191, 172, 236, 0.3), rgba(191, 172, 236, 0.3)), url("./thomas-millot-wlZpxDNT4QI-unsplash.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container header,
+.container footer {
+  font-size: 1.2rem;
+  font-weight: 900;
+  border-radius: 6px;
+  padding: 0.8rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+@media (max-width: 599px) {
+  .container header,
+  .container footer {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 899px) and (orientation: landscape) {
+  .container header,
+  .container footer {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
+}
+
+.container footer {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(191, 172, 236, 0.7)), to(rgba(191, 172, 236, 0.7)));
+  background-image: linear-gradient(to right bottom, rgba(191, 172, 236, 0.7), rgba(191, 172, 236, 0.7));
+}
+
+.container .title {
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(27, 10, 31, 0.7)), to(rgba(32, 61, 61, 0.7)));
+  background-image: linear-gradient(to bottom right, rgba(27, 10, 31, 0.7), rgba(32, 61, 61, 0.7));
+  border: 1px solid #ecacac;
+  font-family: 'Berkshire Swash', cursive;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.container main {
+  max-width: 45rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1.9rem;
+  background: #254a4f;
+  background: linear-gradient(135deg, #254a4f 0%, #cf786c 0%, #cd25f0 100%);
+  -webkit-box-shadow: 0 0 5px 5px #ecacac;
+  box-shadow: 0 0 5px 5px #ecacac;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 899px) and (orientation: portrait) {
+  .container main {
+    max-width: 35rem;
+  }
+}
+
+@media (max-width: 599px) {
+  .container main {
+    padding: 0.4rem;
+    max-width: 25rem;
+    padding: 0.9rem;
+  }
+}
+
+@media (max-width: 899px) and (orientation: landscape) {
+  .container main {
+    max-width: 35rem;
+    padding: 0.9rem;
+  }
+}
+
+.container main .card {
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+@media (max-width: 599px) {
+  .container main .card {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+@media (max-width: 899px) and (orientation: landscape) {
+  .container main .card {
+    width: 5.5rem;
+    height: 5.5rem;
+  }
+}
+
+.container main .card .back,
+.container main .card .front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  border: 1px solid darkred;
+  color: #203d3d;
+  text-align: center;
+  line-height: 1.4;
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 7rem;
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+@media (max-width: 599px) {
+  .container main .card .back,
+  .container main .card .front {
+    font-size: 4.5rem;
+  }
+}
+
+@media (max-width: 899px) and (orientation: landscape) {
+  .container main .card .back,
+  .container main .card .front {
+    font-size: 4.5rem;
+  }
+}
+
+.container main .card .back.flip,
+.container main .card .front.flip {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.container main .card .front {
+  color: #203d3d;
+}
+
+.container .hide {
+  display: none;
+}
+
+.container .popup {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  min-height: 100%;
+  width: 100%;
+  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(27, 10, 31, 0.9)), to(rgba(27, 10, 31, 0.9)));
+  background-image: linear-gradient(to right bottom, rgba(27, 10, 31, 0.9), rgba(27, 10, 31, 0.9));
+  text-align: center;
+  font-family: 'Gochi Hand', cursive;
+}
+
+.container .popup p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  font-size: 5rem;
+  color: #ecacac;
+}
+/*# sourceMappingURL=styles.css.map */
