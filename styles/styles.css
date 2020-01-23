@@ -17,8 +17,8 @@ body {
 }
 
 body {
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(191, 172, 236, 0.3)), to(rgba(191, 172, 236, 0.3))), url("./assets/thomas-millot-wlZpxDNT4QI-unsplash.jpg");
-  background-image: linear-gradient(to bottom, rgba(191, 172, 236, 0.3), rgba(191, 172, 236, 0.3)), url("./assets/thomas-millot-wlZpxDNT4QI-unsplash.jpg");
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(191, 172, 236, 0.3)), to(rgba(191, 172, 236, 0.3))), url("../assets/thomas-millot-wlZpxDNT4QI-unsplash.jpg");
+  background-image: linear-gradient(to bottom, rgba(191, 172, 236, 0.3), rgba(191, 172, 236, 0.3)), url("../assets/thomas-millot-wlZpxDNT4QI-unsplash.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -73,13 +73,8 @@ body {
 }
 
 .container .title {
-  background-image: -webkit-gradient(linear, left top, right bottom, from(rgba(27, 10, 31, 0.7)), to(rgba(32, 61, 61, 0.7)));
-  background-image: linear-gradient(to bottom right, rgba(27, 10, 31, 0.7), rgba(32, 61, 61, 0.7));
   border: 1px solid #ecacac;
   font-family: 'Berkshire Swash', cursive;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
 }
 
 .container main {
@@ -89,7 +84,7 @@ body {
   width: fit-content;
   padding: 1.9rem;
   background: #254a4f;
-  background: linear-gradient(135deg, #254a4f 0%, #cf786c 0%, #cd25f0 100%);
+  background: linear-gradient(135deg, #13353a 0%, #cf786c 0%, #cd25f0 100%);
   -webkit-box-shadow: 0 0 5px 5px #ecacac;
   box-shadow: 0 0 5px 5px #ecacac;
   display: -webkit-box;

@@ -9,7 +9,7 @@ $color5: rgb(205, 37, 240);
 $color6: rgb(27, 10, 31);
 $opacity1: 0.3;
 $opacity2: 0.7;
-$image: url('./assets/thomas-millot-wlZpxDNT4QI-unsplash.jpg');
+$image: url('../assets/thomas-millot-wlZpxDNT4QI-unsplash.jpg');
 
 // mixins
 @mixin background-overlay($opacity: '', $color: '', $direction: '') {
@@ -132,12 +132,12 @@ body {
     @include background-overlay($opacity2, $color2, right bottom);
   }
   .title {
-    @include gradient($color6, $color3, $opacity2, $opacity2, bottom right);
+    // @include gradient($color6, $color3, $opacity2, $opacity2, bottom right);
     border: 1px solid $color1;
     font-family: 'Berkshire Swash', cursive;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
+    // background-clip: text;
+    // -webkit-background-clip: text;
+    // color: transparent;
   }
   main {
     max-width: 45rem;
@@ -147,7 +147,7 @@ body {
     background: rgb(37, 74, 79);
     background: linear-gradient(
       135deg,
-      rgba(37, 74, 79, 1) 0%,
+      rgb(19, 53, 58) 0%,
       rgba(207, 120, 108, 1) 0%,
       rgba(205, 37, 240, 1) 100%
     );
